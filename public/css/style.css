@@ -1,0 +1,14 @@
+body
+{
+	background-color: #cfcfcf;
+}
+.card
+{
+	display: inline-block;
+	height: 300px;
+	width: 200px;
+	border: 10px solid black;
+	background-clip: border-box;
+	margin: 5px;
+	background-color: gray;
+}
