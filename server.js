@@ -33,16 +33,19 @@ function onConnect(socket)
 
 	function emitSimpleList(list)
 	{
+		console.log('emitting list', list);
 		socket.emit('list', list);
 	}
 
 	function emitCard(card)
 	{
+		console.log('emitting card', card);
 		socket.emit('card', card);
 	}
 
 	function emitCompleteList(cards)
 	{
+		console.log('emitting cards');
 		socket.emit('done', cards);
 	}
 

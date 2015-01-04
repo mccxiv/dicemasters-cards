@@ -2,13 +2,21 @@ body
 {
 	background-color: #cfcfcf;
 }
+
 .card
 {
 	display: inline-block;
-	height: 300px;
-	width: 200px;
-	border: 10px solid black;
+	height: 378px;
+	width: 270px;
 	background-clip: border-box;
 	margin: 5px;
 	background-color: gray;
+	outline: 10px solid black;
+	outline-offset: -10px;
+	overflow: hidden;
+}
+
+.card-image
+{
+	width: 100%;
 }

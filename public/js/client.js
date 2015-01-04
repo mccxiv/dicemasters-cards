@@ -21,9 +21,14 @@ function searchController($scope, socketIo)
 		$scope.$apply();
 	});
 
-	socketIo.on('card', function()
+	socketIo.on('card', function(card)
 	{
-
+		console.log('card event', card);
+		_($scope.cards).each(function(element, index, list)
+		{
+			if (element.name === card.name) list[index] = card;
+		});
+		$scope.$apply();
 	});
 
 	$scope.queryChanged = function(query)
