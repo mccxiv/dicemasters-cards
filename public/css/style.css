@@ -3,6 +3,11 @@ body
 	background-color: #cfcfcf;
 }
 
+.search-box
+{
+	display: block;
+}
+
 .card
 {
 	display: inline-block;
@@ -14,6 +19,12 @@ body
 	outline: 10px solid black;
 	outline-offset: -10px;
 	overflow: hidden;
+}
+
+.card-name
+{
+	text-align: center;
+	margin-top: 20%;
 }
 
 .card-image

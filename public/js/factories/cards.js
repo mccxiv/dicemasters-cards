@@ -1,49 +1,51 @@
-function cardsFactory(socketio)
+function cardsFactory(socketio, $rootScope)
 {
+	var factory = {};
 	var searchedCards = [];
 	var savedCards = [];
 
 	socketio.on('list', replaceSimpleList);
 	socketio.on('card', replaceSearchCard);
 
-	function save(name)
-	{
-		var card = _(searchedCards).findWhere({name: name});
-		if (card) savedCards.push(card);
-	}
-
-	function unsave(name)
-	{
-		var card = _(savedCards).findWhere({name: name});
-		if (card) savedCards = _(savedCards).without(card);
-	}
-
 	function replaceSimpleList(simpleList)
 	{
+		console.log('got list', simpleList);
 		searchedCards = simpleList;
+		$rootScope.$apply();
 	}
 
 	function replaceSearchCard(fullCard)
 	{
+		console.log('got card', fullCard);
 		_(searchedCards).each(function(element, index, list)
 		{
-			if (element.name === fullCard.name) list[index] = fullCard;
+			if (element.name === fullCard.name)
+			{
+				list[index] = fullCard;
+				$rootScope.$apply();
+			}
 		});
 	}
 
-	function search(query, progressCallback)
-	{
-		/*socketio.emit('search', query)
-		socketio.on('list', progressCallback);
-		socketio.on('card', progressCallback);
-		socketio.on('done', progressCallback);*/ //TODO
-	}
+	factory.getSearchedCards = function() {return searchedCards};
+	factory.getSavedCards = function() {return savedCards};
 
-	return {
-		getSaved: function() {return savedCards;},
-		getSearched: function() {return searchedCards},
-		save: save,
-		unsave: unsave,
-		search: search
-	}
+	factory.search = function(query, progressCallback)
+	{
+		socketio.emit('search', query); //TODO
+	};
+
+	factory.save = function(name)
+	{
+		var card = _(searchedCards).findWhere({name: name});
+		if (card) savedCards.push(card);
+	};
+
+	factory.unsave = function(name)
+	{
+		var card = _(savedCards).findWhere({name: name});
+		if (card) savedCards = _(savedCards).without(card);
+	};
+
+	return factory;
 }

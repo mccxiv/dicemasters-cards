@@ -7,11 +7,10 @@
 	</head>
 	<body ng-app="diceMasters">
 
-		<div class="searchArea" ng-controller="searchController as search">
-			<input type="text" ng-model="query" ng-blur="queryChanged(query)">
-			<h5>Searching for {{main.query}}</h5>
-			<div class="card" ng-repeat="card in cards">
-				<span ng-if="!card.image">{{card.name}}</span>
+		<div class="searchArea" ng-controller="search">
+			<input type="text" class="search-box" ng-model="query" ng-blur="queryChanged(query)">
+			<div class="card" ng-repeat="card in getCards()">
+				<div class="card-name" ng-if="!card.image">{{card.name}}</div>
 				<img class="card-image" ng-if="card.image" src="{{card.image}}">
 			</div>
 		</div>
@@ -23,6 +22,10 @@
 
 		<script src="js/lib/underscore-min.js"></script>
 
+		<script src="js/controllers/search.js"></script>
+		<script src="js/controllers/desk.js"></script>
+		<script src="js/factories/cards.js"></script>
+		<script src="js/factories/socketio.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
