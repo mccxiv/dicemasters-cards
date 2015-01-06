@@ -38,7 +38,7 @@ function cardsFactory(socketio, $rootScope)
 
 	factory.search = function(query)
 	{
-		socketio.emit('search', query);
+		if (query) socketio.emit('search', query);
 	};
 
 	factory.save = function(name)

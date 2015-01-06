@@ -1,0 +1,15 @@
+*
+{
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 400ms;
+}
+
+.searchArea, .searchDesk
+{
+
+}
+
+.card
+{
+	transition: all 250ms 500ms;
+}
