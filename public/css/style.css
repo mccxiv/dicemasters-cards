@@ -1,6 +1,47 @@
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+html, body
+{
+	height: 100%;
+}
+
 body
 {
+	margin: 0;
+}
+
+.searchArea
+{
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 5px solid black;
 	background-color: #cfcfcf;
+	overflow: hidden;
+}
+
+.deskArea
+{
+	height: calc(100% - 100px);
+	background-color: #b5d592;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.searching .searchArea
+{
+	height: calc(100% - 100px);
+}
+
+.searching .deskArea
+{
+	height: 100px;
 }
 
 .search-box

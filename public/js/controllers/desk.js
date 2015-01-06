@@ -1,4 +1,4 @@
 function deskController($scope, cards)
 {
-	$scope.cards = cards.savedCards;
+	$scope.getCards = cards.getSavedCards;
 }

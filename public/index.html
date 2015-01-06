@@ -5,11 +5,18 @@
 		<title>Dice Masters Cards</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body ng-app="diceMasters">
+	<body ng-app="diceMasters" ng-controller="main" ng-class="{'searching': isSearching()}">
 
-		<div class="searchArea" ng-controller="search">
-			<input type="text" class="search-box" ng-model="query" ng-blur="queryChanged(query)">
+		<div class="deskArea" ng-controller="desk" ng-click="setSearching(false)">
 			<div class="card" ng-repeat="card in getCards()">
+				<div class="card-name" ng-if="!card.image">{{card.name}}</div>
+				<img class="card-image" ng-if="card.image" src="{{card.image}}">
+			</div>
+		</div>
+
+		<div class="searchArea" ng-controller="search" ng-click="setSearching(true)">
+			<input type="text" class="search-box" ng-model="query" ng-blur="search(query)">
+			<div class="card" ng-repeat="card in getCards()" ng-click="save(card.name)">
 				<div class="card-name" ng-if="!card.image">{{card.name}}</div>
 				<img class="card-image" ng-if="card.image" src="{{card.image}}">
 			</div>
@@ -22,6 +29,7 @@
 
 		<script src="js/lib/underscore-min.js"></script>
 
+		<script src="js/controllers/main.js"></script>
 		<script src="js/controllers/search.js"></script>
 		<script src="js/controllers/desk.js"></script>
 		<script src="js/factories/cards.js"></script>

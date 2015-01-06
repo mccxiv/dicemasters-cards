@@ -5,24 +5,30 @@ function cardsFactory(socketio, $rootScope)
 	var savedCards = [];
 
 	socketio.on('list', replaceSimpleList);
-	socketio.on('card', replaceSearchCard);
+	socketio.on('card', replaceWithFullCard);
 
 	function replaceSimpleList(simpleList)
 	{
-		console.log('got list', simpleList);
+		//console.log('got list', simpleList);
 		searchedCards = simpleList;
 		$rootScope.$apply();
 	}
 
-	function replaceSearchCard(fullCard)
+	function replaceWithFullCard(fullCard)
 	{
-		console.log('got card', fullCard);
-		_(searchedCards).each(function(element, index, list)
+		//console.log('got card', fullCard);
+		replaceCard(searchedCards, fullCard);
+		replaceCard(savedCards, fullCard);
+		$rootScope.$apply();
+	}
+
+	function replaceCard(cards, card)
+	{
+		_(cards).each(function(element, index, list)
 		{
-			if (element.name === fullCard.name)
+			if (element.name === card.name)
 			{
-				list[index] = fullCard;
-				$rootScope.$apply();
+				list[index] = card;
 			}
 		});
 	}
@@ -30,19 +36,24 @@ function cardsFactory(socketio, $rootScope)
 	factory.getSearchedCards = function() {return searchedCards};
 	factory.getSavedCards = function() {return savedCards};
 
-	factory.search = function(query, progressCallback)
+	factory.search = function(query)
 	{
-		socketio.emit('search', query); //TODO
+		socketio.emit('search', query);
 	};
 
 	factory.save = function(name)
 	{
-		var card = _(searchedCards).findWhere({name: name});
-		if (card) savedCards.push(card);
+		console.log('saving '+name);
+		if (!_(savedCards).findWhere({name: name})) // not pushing if it's already in
+		{
+			var card = _(searchedCards).findWhere({name: name});
+			if (card) savedCards.push(card);
+		}
 	};
 
 	factory.unsave = function(name)
 	{
+		console.log('unsaving '+name);
 		var card = _(savedCards).findWhere({name: name});
 		if (card) savedCards = _(savedCards).without(card);
 	};
