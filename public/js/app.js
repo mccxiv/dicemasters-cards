@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('diceMasters', []);
+var app = angular.module('diceMasters', ['ngAnimate']);
 
 app.factory('socketio', socketioFactory);
 app.factory('cards', ['socketio', '$rootScope', cardsFactory]);

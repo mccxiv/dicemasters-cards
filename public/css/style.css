@@ -38,9 +38,14 @@ body
 	height: calc(100% - 100px);
 }
 
+.searching .searchArea .card
+{
+	opacity: 100;
+}
+
 .searchArea .card
 {
-	display: none;
+	opacity: 0;
 }
 
 .searching .searchArea .card
@@ -73,10 +78,9 @@ body
 	height: 378px;
 	width: 270px;
 	margin: 5px;
-	background-color: gray;
-	//outline: 10px solid black;
-	outline-offset: -10px;
 	overflow: hidden;
+	background: url(../img/dice-masters-card-back.png);
+	background-size: 100%;
 }
 
 .card-name
@@ -88,4 +92,5 @@ body
 .card-image
 {
 	width: 100%;
+	height: 100%;
 }
