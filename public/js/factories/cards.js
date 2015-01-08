@@ -38,6 +38,7 @@ function cardsFactory(socketio, $rootScope)
 
 	factory.search = function(query)
 	{
+		console.log('search called, searching:', query);
 		if (query) socketio.emit('search', query);
 	};
 

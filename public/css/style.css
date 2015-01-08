@@ -64,12 +64,23 @@ body
 	height: 90px;
 }
 
+.search-block
+{
+	padding-top: 30px;
+	height: 100px;
+}
+
 .search-box
 {
+	width: 400px;
 	height: 40px;
-	display: block;
+	margin: 0 auto;
+}
+
+.search-box:focus
+{
 	width: 600px;
-	margin: 30px auto 25px;
+	height: 45px;
 }
 
 .card
@@ -87,6 +98,11 @@ body
 {
 	text-align: center;
 	margin-top: 20%;
+}
+
+.card.full
+{
+	background: black none;
 }
 
 .card-image
