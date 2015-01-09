@@ -3,3 +3,19 @@
 {
 	transition: all 350ms ease-out;
 }
+
+
+.searchArea, .deskArea
+{
+	transition: height 300ms ease-out;
+}
+
+.card
+{
+	//transition: transform 500ms ease-out;
+}
+
+.card:hover
+{
+	transform: scale3d(1.05, 1.05, 1.05);
+}

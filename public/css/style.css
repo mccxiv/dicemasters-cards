@@ -20,7 +20,13 @@ body
 	width: 100%;
 	border-bottom: 1px solid #ccc;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+
+.searchArea .cards
+{
 	overflow: auto;
+	height: calc(100% - 100px);
 }
 
 .deskArea
@@ -48,11 +54,6 @@ body
 	opacity: 0;
 }
 
-.searching .searchArea .card
-{
-	display: inline-block;
-}
-
 .searching .deskArea
 {
 	height: 100px;
@@ -68,6 +69,7 @@ body
 {
 	padding-top: 30px;
 	height: 100px;
+	margin-bottom: 0;
 }
 
 .search-box
@@ -75,6 +77,7 @@ body
 	width: 400px;
 	height: 40px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .search-box:focus
@@ -83,21 +86,51 @@ body
 	height: 45px;
 }
 
+.cards
+{
+	overflow: auto;
+	height: calc(100% - 100px);
+	padding-top: 20px;
+}
+
 .card
 {
 	display: inline-block;
-	height: 378px;
-	width: 270px;
+	height: 350px;
+	width: 250px;
 	margin: 5px;
 	overflow: hidden;
 	background: url(../img/dice-masters-card-back.png);
 	background-size: 100%;
+	text-align: center;
+	font-family: 'Alegreya', serif;
+	color: white;
+}
+
+.card:hover
+{
+	transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .card-name
 {
-	text-align: center;
-	margin-top: 20%;
+	margin-top: 5%;
+}
+
+.card-name .title
+{
+	font-size: 30px;
+}
+
+.card-name .subtitle
+{
+	font-size: 20px;
+}
+
+.card-apology
+{
+	margin-top: 70%;
+	font-size: 20px;
 }
 
 .card.full

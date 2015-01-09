@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Dice Masters Cards</title>
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Alegreya:700'>
 		<link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
 		<link rel="stylesheet" href="css/angular-animations.css">
+		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/transitions.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body ng-app="diceMasters" ng-controller="main" ng-class="{'searching': isSearching()}">
+	<body ng-app="diceMasters" ng-controller="main" ng-class="{'searching': isSearching(), 'loaded': true}">
 
 		<!-- TODO preload cardback -->
 
@@ -22,13 +24,23 @@
 		<div class="searchArea" ng-controller="search" ng-click="setSearching(true)">
 
 			<div class="form-group search-block">
-				<input type="text" class="search-box form-control input-lg" placeholder="..." ng-model="query" ng-change="searchDebounced(query)" ng-focus="setSearching(true)">
+				<input autofocus type="text" class="search-box form-control input-lg" placeholder="" ng-model="query" ng-change="searchDebounced(query)" ng-focus="setSearching(true)">
 			</div>
 
-			<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)"  ng-class="{'full': card.image}">
-				<div class="card-name" ng-if="!card.image">{{card.name}}</div>
-				<img class="card-image" ng-if="card.image" src="{{card.image}}">
+			<div class="cards">
+				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">
+					<div class="card-name" ng-if="!card.image">
+						<div class="title">{{card.title}}</div>
+						<div class="subtitle">{{card.subtitle}}</div>
+					</div>
+					<div class="card-apology" ng-if="!card.image && card.rarity">
+						<div class="apology-text">No image available.</div>
+						<div><a href="{{card.url}}" target="_blank">More info</a></div>
+					</div>
+					<img class="card-image" ng-if="card.image" src="{{card.image}}">
+				</div>
 			</div>
+
 		</div>
 
 		<script src="js/lib/jquery-2.1.1.min.js"></script>
