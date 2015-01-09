@@ -4,9 +4,10 @@ var _ = require('underscore');
 var express = require('express');
 var socketio = require('socket.io');
 var dm = require('dm-lookup');
+var port = process.env.PORT || 80;
 
 var app = express();
-var server = app.listen(80);
+var server = app.listen(port);
 var io = socketio.listen(server);
 
 app.use(express.static('./public'));
