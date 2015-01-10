@@ -72,3 +72,8 @@
 	-webkit-animation: flipInY 1s;
 	animation: flipInY 1s;
 }
+
+.card-animation.ng-leave
+{
+	transition: none 0s;
+}

@@ -20,3 +20,6 @@ Especially true for beginners that don't have them memorized.
 - [x] Create separate sections, one for search and one for saved cards
 - [ ] Create minimalist UI that isn't hideous
 - [ ] Figure out persistence
+
+#### Detailed progress
+- Whiteboard: [https://trello.com/b/90zEx8mh/dice-masters-cards](https://trello.com/b/90zEx8mh/dice-masters-cards)

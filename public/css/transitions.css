@@ -10,9 +10,16 @@
 	transition: height 300ms ease-out;
 }
 
+
+.deskArea .card
+{
+	transition: all 300ms ease-in-out 400ms;
+	transition-property: height, width; /* overrides all :) */
+}
+
 .card
 {
-	//transition: transform 500ms ease-out;
+	transition: transform ease-out 500ms;
 }
 
 .card:hover
