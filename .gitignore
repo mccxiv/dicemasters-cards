@@ -1,5 +1,5 @@
 .idea/
 node-modules/
-dev-public/bower_components/
+public-dev/bower_components/
 dicemasters.iml
 npm-debug.log
