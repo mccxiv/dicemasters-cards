@@ -1,5 +1,17 @@
-/* Taken from animate.css :) https://github.com/daneden/animate.css */
 
+.card-animation.ng-enter {
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	-webkit-animation: flipInY 1s;
+	animation: flipInY 1s;
+}
+
+.card-animation.ng-leave
+{
+	transition: none 0s;
+}
+
+/* Taken from animate.css :) https://github.com/daneden/animate.css */
 @-webkit-keyframes flipInY {
 	0% {
 		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -64,16 +76,4 @@
 		-webkit-transform: perspective(400px);
 		transform: perspective(400px);
 	}
-}
-
-.card-animation.ng-enter {
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	-webkit-animation: flipInY 1s;
-	animation: flipInY 1s;
-}
-
-.card-animation.ng-leave
-{
-	transition: none 0s;
 }

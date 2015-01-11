@@ -11,6 +11,7 @@ var server = app.listen(port);
 var io = socketio.listen(server);
 
 app.use(express.static('./public'));
+app.use('/dev', express.static('./dev-public'));
 
 io.on('connection', onConnect);
 
@@ -56,4 +57,3 @@ function onConnect(socket)
 		currentSearch = null;
 	}
 }
-

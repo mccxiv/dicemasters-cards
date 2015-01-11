@@ -103,7 +103,8 @@ body
 	background: url(../img/dice-masters-card-back.png);
 	background-size: 100%;
 	text-align: center;
-	font-family: 'Alegreya', serif;
+	font-family: 'Palatino', serif;
+	font-weight: 800;
 	color: white;
 }
 
