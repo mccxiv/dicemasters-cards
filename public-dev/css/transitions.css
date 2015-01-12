@@ -1,7 +1,7 @@
 
 .search-box
 {
-	transition: all 350ms ease-out;
+	transition: all 150ms ease-out;
 }
 
 
@@ -9,7 +9,6 @@
 {
 	transition: height 300ms ease-out;
 }
-
 
 .deskArea .card
 {
@@ -19,7 +18,7 @@
 
 .card
 {
-	transition: transform ease-out 500ms;
+	transition: transform ease-out 200ms;
 }
 
 .card:hover

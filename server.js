@@ -11,7 +11,7 @@ var server = app.listen(port);
 var io = socketio.listen(server);
 
 app.use(express.static('./public'));
-app.use('/dev', express.static('./dev-public'));
+app.use('/dev', express.static('./public-dev'));
 
 io.on('connection', onConnect);
 
