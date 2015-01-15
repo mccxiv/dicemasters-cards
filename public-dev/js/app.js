@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('diceMasters', ['ngAnimate']);
+var app = angular.module('diceMasters', ['ngAnimate', 'ngProgress']);
 
 
 app.factory('socketio', socketioFactory);
-app.factory('cards', ['socketio', '$rootScope', cardsFactory]);
+app.factory('cards', ['socketio', '$rootScope', 'ngProgress', cardsFactory]);
 app.controller('main', ['$scope', mainController]);
 app.controller('search', ['$scope', 'cards', searchController]);
 app.controller('desk', ['$scope', 'cards', deskController]);

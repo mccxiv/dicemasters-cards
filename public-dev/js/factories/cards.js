@@ -1,12 +1,18 @@
-function cardsFactory(socketio, $rootScope)
+function cardsFactory(socketio, $rootScope, ngProgress)
 {
 	var factory = {};
 	var searchedCards = [];
 	var savedCards = [];
 	var previousQuery;
 
-	socketio.on('list', replaceSimpleList);
+	socketio.on('list', gotList);
 	socketio.on('card', replaceWithFullCard);
+
+	function gotList(simpleList)
+	{
+		ngProgress.complete();
+		replaceSimpleList(simpleList);
+	}
 
 	function replaceSimpleList(simpleList)
 	{
@@ -42,6 +48,7 @@ function cardsFactory(socketio, $rootScope)
 		previousQuery = newQuery;
 
 		console.log('searching:', newQuery);
+		ngProgress.start();
 		socketio.emit('search', newQuery);
 	};
 
