@@ -57,24 +57,28 @@
 
 .search-box::-webkit-input-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box::-moz-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box:-ms-input-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box:focus
 {
+	padding-top:10px;
 	width: 600px;
 	height: 45px;
 }

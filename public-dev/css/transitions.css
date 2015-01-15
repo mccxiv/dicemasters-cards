@@ -10,10 +10,19 @@
 	transition: height 300ms ease-out;
 }
 
-.deskArea .card
+.deskArea .card, .deskArea .card::after
 {
 	transition: all 300ms ease-in-out 400ms;
-	transition-property: height, width; /* overrides all :) */
+}
+
+.deskArea .card
+{
+	transition-property: height, width, border-radius; /* overrides all :) */
+}
+
+.deskArea .card::after
+{
+	transition-property: border-width, border-radius; /* overrides all :) */
 }
 
 .card
