@@ -121,10 +121,19 @@ body::after
 	transition: height 300ms ease-out;
 }
 
-.deskArea .card
+.deskArea .card, .deskArea .card::after
 {
 	transition: all 300ms ease-in-out 400ms;
-	transition-property: height, width; /* overrides all :) */
+}
+
+.deskArea .card
+{
+	transition-property: height, width, border-radius; /* overrides all :) */
+}
+
+.deskArea .card::after
+{
+	transition-property: border-width, border-radius; /* overrides all :) */
 }
 
 .card
@@ -200,24 +209,28 @@ body::after
 
 .search-box::-webkit-input-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box::-moz-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box:-ms-input-placeholder
 {
+	padding-top:10px;
 	font-size: 16px;
 	color: #e7e7e7;
 }
 
 .search-box:focus
 {
+	padding-top:10px;
 	width: 600px;
 	height: 45px;
 }

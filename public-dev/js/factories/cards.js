@@ -3,20 +3,19 @@ function cardsFactory(socketio, $rootScope)
 	var factory = {};
 	var searchedCards = [];
 	var savedCards = [];
+	var previousQuery;
 
 	socketio.on('list', replaceSimpleList);
 	socketio.on('card', replaceWithFullCard);
 
 	function replaceSimpleList(simpleList)
 	{
-		//console.log('got list', simpleList);
 		searchedCards = simpleList;
 		$rootScope.$apply();
 	}
 
 	function replaceWithFullCard(fullCard)
 	{
-		//console.log('got card', fullCard);
 		replaceCard(searchedCards, fullCard);
 		replaceCard(savedCards, fullCard);
 		$rootScope.$apply();
@@ -38,8 +37,12 @@ function cardsFactory(socketio, $rootScope)
 
 	factory.search = function(query)
 	{
-		console.log('search called, searching:', query);
-		if (query && query.length > 2) socketio.emit('search', query);
+		var newQuery = query.trim();
+		if (!newQuery || previousQuery === newQuery) return;
+		previousQuery = newQuery;
+
+		console.log('searching:', newQuery);
+		if (query && query.length > 2) socketio.emit('search', newQuery);
 	};
 
 	factory.save = function(name)

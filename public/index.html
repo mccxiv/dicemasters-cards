@@ -20,9 +20,10 @@
 				<input autofocus type="text"
 					   class="search-box form-control input-lg"
 					   placeholder="Search for cards..."
-					   ng-model="query" ng-change="search(query)"
+					   ng-model="query" ng-change="searchDebounced(query)"
 					   ng-focus="setSearching(true)"
-					   ng-keypress="key($event)">
+					   ng-keypress="key($event)"
+					   ng-blur="search(query)">
 			</div>
 			<div class="cards">
 				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">

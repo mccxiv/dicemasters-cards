@@ -18,15 +18,18 @@ io.on('connection', onConnect);
 function onConnect(socket)
 {
 	var currentSearch;
+	var previousQuery;
 	console.log('connected');
 	socket.on('search', onCardLookup);
 	socket.on('disconnect', abortSearch);
 
 	function onCardLookup(query)
 	{
-		console.log('query:', query);
-		if (currentSearch) currentSearch.abort();
-		currentSearch = dm.search(query);
+		var newQuery = query.trim();
+		if (!newQuery || previousQuery === newQuery) return;
+		if (currentSearch) abortSearch();
+		currentSearch = dm.search(newQuery);
+		previousQuery = newQuery;
 
 		currentSearch.on('list', emitSimpleList);
 		currentSearch.on('card', emitCard);
