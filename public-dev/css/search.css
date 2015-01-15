@@ -1,18 +1,3 @@
-*::-webkit-input-placeholder {
-	color: red;
-}
-*:-moz-placeholder {
-	/* FF 4-18 */
-	color: red;
-}
-*::-moz-placeholder {
-	/* FF 19+ */
-	color: red;
-}
-*:-ms-input-placeholder {
-	/* IE 10+ */
-	color: red;
-}
 
 .searchArea
 {
@@ -67,6 +52,25 @@
 	margin: 0 auto;
 	text-align: center;
 	color: #f0f0f0;
+	font-size: 30px !important;
+}
+
+.search-box::-webkit-input-placeholder
+{
+	font-size: 16px;
+	color: #e7e7e7;
+}
+
+.search-box::-moz-placeholder
+{
+	font-size: 16px;
+	color: #e7e7e7;
+}
+
+.search-box:-ms-input-placeholder
+{
+	font-size: 16px;
+	color: #e7e7e7;
 }
 
 .search-box:focus
