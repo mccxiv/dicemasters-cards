@@ -4,6 +4,7 @@ html {box-sizing: border-box;}
 html, body
 {
 	height: 100%;
+	overflow: hidden;
 }
 
 body
@@ -11,29 +12,7 @@ body
 	margin: 0;
 }
 
-.searchArea
-{
-	height: 100px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-	background-color: #81CFE0;
-	overflow: hidden;
-}
 
-.searchArea .cards
-{
-	overflow: auto;
-	height: calc(100% - 100px);
-	display: none;
-}
-
-.searching .searchArea .cards
-{
-	display: block;
-}
 
 .deskArea
 {
@@ -46,20 +25,7 @@ body
 	background-color: #22A7F0;
 }
 
-.searching .searchArea
-{
-	height: calc(100% - 100px);
-}
 
-.searching .searchArea .card
-{
-	opacity: 100;
-}
-
-.searchArea .card
-{
-	opacity: 0;
-}
 
 .searching .deskArea
 {
@@ -80,26 +46,6 @@ body
 	border-radius: 3px;
 }
 
-.search-block
-{
-	padding-top: 30px;
-	height: 100px;
-	margin-bottom: 0;
-}
-
-.search-box
-{
-	width: 400px;
-	height: 40px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.search-box:focus
-{
-	width: 600px;
-	height: 45px;
-}
 
 .cards
 {

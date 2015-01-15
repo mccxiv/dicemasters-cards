@@ -25,3 +25,8 @@
 {
 	transform: scale3d(1.05, 1.05, 1.05);
 }
+
+.splash
+{
+	transition: margin-left 500ms ease-in-out;
+}

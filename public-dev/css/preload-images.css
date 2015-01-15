@@ -1,0 +1,5 @@
+body::after
+{
+	display: none;
+	content: url(../img/dice-masters-card-back.png);
+}

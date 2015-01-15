@@ -18,7 +18,11 @@
 		<div class="searchArea" ng-controller="search" ng-click="setSearching(true)">
 
 			<div class="form-group search-block">
-				<input autofocus type="text" class="search-box form-control input-lg" placeholder="" ng-model="query" ng-change="searchDebounced(query)" ng-focus="setSearching(true)">
+				<input autofocus type="text"
+					   class="search-box form-control input-lg"
+					   ng-model="query" ng-change="search(query)"
+					   ng-focus="setSearching(true)"
+					   ng-keypress="key($event)">
 			</div>
 
 			<div class="cards">

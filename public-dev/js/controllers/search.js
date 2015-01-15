@@ -6,7 +6,6 @@ function searchController($scope, cards)
 
 	$scope.key = function($event)
 	{
-		console.log('target', $event.target);
 		if ($event.keyCode === 13)
 		{
 			angular.element($event.target)[0].blur();

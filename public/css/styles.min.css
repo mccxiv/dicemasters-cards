@@ -84,10 +84,15 @@
 		transform: perspective(400px);
 	}
 }
+body::after
+{
+	display: none;
+	content: url(img01.png) url(img02.png) url(img03.png) url(img04.png);
+}
 
 .search-box
 {
-	transition: all 350ms ease-out;
+	transition: all 150ms ease-out;
 }
 
 
@@ -95,7 +100,6 @@
 {
 	transition: height 300ms ease-out;
 }
-
 
 .deskArea .card
 {
@@ -105,7 +109,7 @@
 
 .card
 {
-	transition: transform ease-out 500ms;
+	transition: transform ease-out 200ms;
 }
 
 .card:hover
@@ -132,8 +136,8 @@ body
 	top: 0;
 	left: 0;
 	width: 100%;
-	border-bottom: 1px solid #ccc;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	background-color: #81CFE0;
 	overflow: hidden;
 }
 
@@ -141,6 +145,12 @@ body
 {
 	overflow: auto;
 	height: calc(100% - 100px);
+	display: none;
+}
+
+.searching .searchArea .cards
+{
+	display: block;
 }
 
 .deskArea
@@ -151,6 +161,7 @@ body
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	background-color: #22A7F0;
 }
 
 .searching .searchArea
@@ -177,6 +188,14 @@ body
 {
 	width: 64px;
 	height: 90px;
+	border-radius: 3px;
+	margin-bottom: 0;
+}
+
+.searching .deskArea .card::after
+{
+	border-width: 2px;
+	border-radius: 3px;
 }
 
 .search-block
@@ -209,7 +228,7 @@ body
 
 .card
 {
-	display: inline-block;
+	float: left;
 	height: 350px;
 	width: 250px;
 	margin: 5px;
@@ -220,6 +239,22 @@ body
 	font-family: 'Palatino', serif;
 	font-weight: 800;
 	color: white;
+	border-radius: 10px;
+	position: relative;
+	border: 1px solid rgb(165, 165, 165);
+	box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.26);
+}
+
+.card::after
+{
+	content: '';
+	width: 100%;
+	height: 100%;
+	border: 5px solid white;
+	border-radius: 10px; /* prevents some rendering bugs with transforms */
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .card:hover

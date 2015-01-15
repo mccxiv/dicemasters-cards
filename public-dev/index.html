@@ -5,31 +5,33 @@
 		<title>Dice Masters Cards</title>
 
 		<!-- build:css css/styles.min.css -->
-		<link rel="stylesheet" href="bower_components/bootswatch/simplex/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootswatch/paper/bootstrap.min.css">
 		<link rel="stylesheet" href="css/angular-animations.css">
+		<link rel="stylesheet" href="css/preload-images.css">
+		<link rel="stylesheet" href="css/splash-screen.css">
 		<link rel="stylesheet" href="css/transitions.css">
+		<link rel="stylesheet" href="css/search.css">
 		<link rel="stylesheet" href="css/style.css">
 		<!-- endbuild -->
 	</head>
-	<body ng-app="diceMasters" ng-controller="main" ng-class="{'searching': isSearching(), 'loaded': true}">
+	<body ng-app="diceMasters" ng-controller="main" class="searching" ng-class="{'searching': isSearching(), 'loaded': true}">
 
 		<div class="deskArea" ng-controller="desk" ng-click="setSearching(false)">
 			<div class="card card-animation" ng-repeat="card in getCards()">
 				<div class="card-name" ng-if="!card.image">{{card.name}}</div>
-				<img class="card-image" ng-if="card.image" src="{{card.image}}">
+				<img class="card-image" ng-if="card.image" ng-src="{{card.image}}">
 			</div>
 		</div>
 
 		<div class="searchArea" ng-controller="search" ng-click="setSearching(true)">
-
 			<div class="form-group search-block">
 				<input autofocus type="text"
 					   class="search-box form-control input-lg"
+					   placeholder="Search for cards..."
 					   ng-model="query" ng-change="search(query)"
 					   ng-focus="setSearching(true)"
 					   ng-keypress="key($event)">
 			</div>
-
 			<div class="cards">
 				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">
 					<div class="card-name" ng-if="!card.image">
@@ -40,10 +42,13 @@
 						<div class="apology-text">No image available.</div>
 						<div><a href="{{card.url}}" target="_blank">More info</a></div>
 					</div>
-					<img class="card-image" ng-if="card.image" src="{{card.image}}">
+					<img class="card-image" ng-if="card.image" ng-src="{{card.image}}">
 				</div>
 			</div>
+		</div>
 
+		<div class="splash">
+			<h1>...</h1>
 		</div>
 
 		<!-- build:js js/scripts.min.js -->
