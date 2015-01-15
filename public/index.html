@@ -23,7 +23,8 @@
 					   ng-model="query" ng-change="searchDebounced(query)"
 					   ng-focus="setSearching(true)"
 					   ng-keypress="key($event)"
-					   ng-blur="search(query)">
+					   ng-blur="search(query)"
+					   adr-select-on-click>
 			</div>
 			<div class="cards">
 				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">
