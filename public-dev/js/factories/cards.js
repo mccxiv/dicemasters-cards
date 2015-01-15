@@ -38,11 +38,11 @@ function cardsFactory(socketio, $rootScope)
 	factory.search = function(query)
 	{
 		var newQuery = query.trim();
-		if (!newQuery || previousQuery === newQuery) return;
+		if (!newQuery || newQuery.length < 3 || previousQuery === newQuery) return;
 		previousQuery = newQuery;
 
 		console.log('searching:', newQuery);
-		if (query && query.length > 2) socketio.emit('search', newQuery);
+		socketio.emit('search', newQuery);
 	};
 
 	factory.save = function(name)
