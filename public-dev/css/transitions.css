@@ -17,7 +17,13 @@
 
 .deskArea .card
 {
-	transition-property: height, width, border-radius; /* overrides all :) */
+	transition-property: height, width, border-radius, transform; /* overrides all :) */
+}
+
+.deskArea .card:hover
+{
+	transition-delay: 0s;
+	transition-duration: 100ms;
 }
 
 .deskArea .card::after
@@ -28,14 +34,11 @@
 .card
 {
 	transition: transform ease-out 200ms;
-}
-
-.card:hover
-{
-	transform: scale3d(1.05, 1.05, 1.05);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 .splash
 {
-	transition: margin-left 500ms ease-in-out;
+	transition: margin-left 800ms ease-out 200ms;
 }

@@ -7,6 +7,7 @@
 	height: 100%;
 	padding-top: 25%;
 	background-color: #87D37C;
+	box-shadow: 4px 0 4px rgba(0,0,0,0.2);
 }
 
 .splash h1
@@ -16,5 +17,5 @@
 
 .loaded .splash
 {
-	margin-left: -100%;
+	margin-left: -120%;
 }

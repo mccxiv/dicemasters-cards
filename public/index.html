@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Dice Masters Cards</title>
+		<link rel="icon" type="image/png" href="img/dicemasters-storm.png">
 
 		<link rel="stylesheet" href="css/styles.min.css"/>
 	</head>
@@ -26,7 +27,7 @@
 					   ng-blur="search(query)"
 					   adr-select-on-click>
 			</div>
-			<div class="cards">
+			<div class="cards" scrollable>
 				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">
 					<div class="card-name" ng-if="!card.image">
 						<div class="title">{{card.title}}</div>
@@ -42,7 +43,7 @@
 		</div>
 
 		<div class="splash">
-			<h1>...</h1>
+			<h1></h1>
 		</div>
 
 		<script src="js/scripts.min.js"></script>

@@ -15,6 +15,8 @@ app.use('/dev', express.static('./public-dev'));
 
 io.on('connection', onConnect);
 
+console.log('started');
+
 function onConnect(socket)
 {
 	var currentSearch;

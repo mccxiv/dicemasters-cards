@@ -10,6 +10,7 @@ function cardsFactory(socketio, $rootScope, ngProgress)
 
 	function gotList(simpleList)
 	{
+		console.log('got list:', simpleList);
 		ngProgress.complete();
 		replaceSimpleList(simpleList);
 	}
@@ -43,7 +44,8 @@ function cardsFactory(socketio, $rootScope, ngProgress)
 
 	factory.search = function(query)
 	{
-		var newQuery = query.trim();
+		var newQuery;
+		if (query) newQuery = query.trim();
 		if (!newQuery || newQuery.length < 3 || previousQuery === newQuery) return;
 		previousQuery = newQuery;
 

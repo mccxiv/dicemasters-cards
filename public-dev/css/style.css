@@ -12,8 +12,6 @@ body
 	margin: 0;
 }
 
-
-
 .deskArea
 {
 	height: calc(100% - 100px);
@@ -23,13 +21,15 @@ body
 	left: 0;
 	width: 100%;
 	background-color: #22A7F0;
+	padding-top: 10px;
 }
-
-
 
 .searching .deskArea
 {
+	padding-top: 0;
 	height: 100px;
+	white-space: nowrap;
+	overflow-y: hidden;
 }
 
 .searching .deskArea .card
@@ -38,6 +38,7 @@ body
 	height: 90px;
 	border-radius: 3px;
 	margin-bottom: 0;
+	white-space: nowrap;
 }
 
 .searching .deskArea .card::after
@@ -45,7 +46,6 @@ body
 	border-width: 2px;
 	border-radius: 3px;
 }
-
 
 .cards
 {
@@ -56,7 +56,7 @@ body
 
 .card
 {
-	float: left;
+	display: inline-block;
 	height: 350px;
 	width: 250px;
 	margin: 5px;
@@ -83,11 +83,12 @@ body
 	position: absolute;
 	top: 0;
 	left: 0;
+	pointer-events: none;
 }
 
 .card:hover
 {
-	transform: scale3d(1.05, 1.05, 1.05);
+	transform: scale(1.05, 1.05);
 }
 
 .card-name
