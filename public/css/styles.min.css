@@ -259,26 +259,6 @@ body::after
 	display: none;
 }
 
-.searching .searchArea .cards
-{
-	display: block;
-}
-
-.searching .searchArea
-{
-	height: calc(100% - 100px);
-}
-
-.searching .searchArea .card
-{
-	opacity: 100;
-}
-
-.searchArea .card
-{
-	opacity: 0;
-}
-
 .search-block
 {
 	padding-top: 30px;
@@ -323,6 +303,27 @@ body::after
 	width: 600px;
 	height: 45px;
 }
+
+/* WHILE SEARCHING */
+.searching .searchArea .cards
+{
+	display: block;
+}
+
+.searching .searchArea
+{
+	height: calc(100% - 100px);
+}
+
+.searching .searchArea .card
+{
+	opacity: 100;
+}
+
+.searchArea .card
+{
+	opacity: 0;
+}
 html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
 
@@ -340,21 +341,27 @@ body
 .deskArea
 {
 	height: calc(100% - 100px);
-	overflow: auto;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	background-color: #22A7F0;
+}
+
+.deskArea .cards
+{
+	height: 100%;
 	padding-top: 10px;
+}
+
+.searching .deskArea .cards
+{
+	padding-top: 0;
 }
 
 .searching .deskArea
 {
-	padding-top: 0;
 	height: 100px;
-	white-space: nowrap;
-	overflow-y: hidden;
 }
 
 .searching .deskArea .card
@@ -363,20 +370,12 @@ body
 	height: 90px;
 	border-radius: 3px;
 	margin-bottom: 0;
-	white-space: nowrap;
 }
 
 .searching .deskArea .card::after
 {
 	border-width: 2px;
 	border-radius: 3px;
-}
-
-.cards
-{
-	overflow: auto;
-	height: calc(100% - 100px);
-	padding-top: 20px;
 }
 
 .card

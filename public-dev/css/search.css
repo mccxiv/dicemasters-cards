@@ -18,26 +18,6 @@
 	display: none;
 }
 
-.searching .searchArea .cards
-{
-	display: block;
-}
-
-.searching .searchArea
-{
-	height: calc(100% - 100px);
-}
-
-.searching .searchArea .card
-{
-	opacity: 100;
-}
-
-.searchArea .card
-{
-	opacity: 0;
-}
-
 .search-block
 {
 	padding-top: 30px;
@@ -81,4 +61,25 @@
 	padding-top:10px;
 	width: 600px;
 	height: 45px;
+}
+
+/* WHILE SEARCHING */
+.searching .searchArea .cards
+{
+	display: block;
+}
+
+.searching .searchArea
+{
+	height: calc(100% - 100px);
+}
+
+.searching .searchArea .card
+{
+	opacity: 100;
+}
+
+.searchArea .card
+{
+	opacity: 0;
 }
