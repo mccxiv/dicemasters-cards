@@ -16,6 +16,7 @@
 	overflow: auto;
 	height: calc(100% - 100px);
 	display: none;
+	margin-top: 100px;
 }
 
 .search-block
@@ -23,6 +24,9 @@
 	padding-top: 30px;
 	height: 100px;
 	margin-bottom: 0;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
 }
 
 .search-box
@@ -82,4 +86,9 @@
 .searchArea .card
 {
 	opacity: 0;
+}
+
+.scrolling-search-cards .search-block
+{
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }

@@ -4,6 +4,10 @@
 	transition: all 150ms ease-out;
 }
 
+.search-block
+{
+	transition: box-shadow 150ms;
+}
 
 .searchArea, .deskArea
 {

@@ -21,7 +21,7 @@
 
 		<div class="deskArea" ng-controller="desk" ng-click="setSearching(false)">
 			<div class="cards" scrollable>
-				<div class="card" ng-repeat="card in getCards()">
+				<div class="card card-animation" ng-repeat="card in getCards()">
 					<div class="card-name" ng-if="!card.image">{{card.name}}</div>
 					<img class="card-image" ng-if="card.image" ng-src="{{card.image}}">
 				</div>
