@@ -19,13 +19,18 @@ body
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: #22A7F0;
+	background-color: #81CFE0;
 }
 
 .deskArea .cards
 {
 	height: 100%;
 	padding-top: 10px;
+}
+
+.deskArea .card
+{
+	margin: 10px;
 }
 
 .searching .deskArea .cards
@@ -43,7 +48,7 @@ body
 	width: 64px;
 	height: 90px;
 	border-radius: 3px;
-	margin-bottom: 0;
+	margin: 5px 5px 0;
 }
 
 .searching .deskArea .card::after
@@ -57,7 +62,6 @@ body
 	display: inline-block;
 	height: 350px;
 	width: 250px;
-	margin: 5px;
 	overflow: hidden;
 	background: url(../img/dice-masters-card-back.png);
 	background-size: 100%;

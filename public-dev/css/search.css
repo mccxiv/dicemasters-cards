@@ -6,8 +6,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-	background-color: #81CFE0;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+	background-color: #22A7F0;
 	overflow: hidden;
 }
 
@@ -86,9 +86,10 @@
 .searchArea .card
 {
 	opacity: 0;
+	margin: 10px;
 }
 
 .scrolling-search-cards .search-block
 {
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }

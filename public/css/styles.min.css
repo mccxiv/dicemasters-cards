@@ -184,6 +184,7 @@ body::after
 	padding-top: 25%;
 	background-color: #87D37C;
 	box-shadow: 4px 0 4px rgba(0,0,0,0.2);
+	z-index: 100;
 }
 
 .splash h1
@@ -201,6 +202,10 @@ body::after
 	transition: all 150ms ease-out;
 }
 
+.search-block
+{
+	transition: box-shadow 150ms;
+}
 
 .searchArea, .deskArea
 {
@@ -247,8 +252,8 @@ body::after
 	top: 0;
 	left: 0;
 	width: 100%;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-	background-color: #81CFE0;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+	background-color: #22A7F0;
 	overflow: hidden;
 }
 
@@ -257,6 +262,7 @@ body::after
 	overflow: auto;
 	height: calc(100% - 100px);
 	display: none;
+	margin-top: 100px;
 }
 
 .search-block
@@ -264,6 +270,9 @@ body::after
 	padding-top: 30px;
 	height: 100px;
 	margin-bottom: 0;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
 }
 
 .search-box
@@ -323,6 +332,12 @@ body::after
 .searchArea .card
 {
 	opacity: 0;
+	margin: 10px;
+}
+
+.scrolling-search-cards .search-block
+{
+	box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
@@ -345,13 +360,18 @@ body
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: #22A7F0;
+	background-color: #81CFE0;
 }
 
 .deskArea .cards
 {
 	height: 100%;
 	padding-top: 10px;
+}
+
+.deskArea .card
+{
+	margin: 10px;
 }
 
 .searching .deskArea .cards
@@ -369,7 +389,7 @@ body
 	width: 64px;
 	height: 90px;
 	border-radius: 3px;
-	margin-bottom: 0;
+	margin: 5px 5px 0;
 }
 
 .searching .deskArea .card::after
@@ -383,7 +403,6 @@ body
 	display: inline-block;
 	height: 350px;
 	width: 250px;
-	margin: 5px;
 	overflow: hidden;
 	background: url(../img/dice-masters-card-back.png);
 	background-size: 100%;
