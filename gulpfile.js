@@ -2,20 +2,25 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	mincss = require('gulp-minify-css'),
 	minhtml = require('gulp-minify-html'),
-	usemin = require('gulp-usemin'),
+	replaceHtml = require('gulp-html-replace'),
 	concat = require('gulp-concat'),
-	getHtmlSrc = require('gulp-html-src'),
-	del = require('del');
+	getFiles = require('gulp-dom-src'),
+	clean = require('gulp-clean'),
+	runSequence = require('run-sequence');
+
+gulp.task('everything', function(cb)
+{
+	runSequence('clean-public',	['copy-images', 'concat-minify-js', 'concat-minify-css'], 'use-min-and-minify-html', cb);
+});
 
 gulp.task('copy-images', function()
 {
-	gulp.src('./public-dev/img/**').pipe(gulp.dest('./public/img'));
+	return gulp.src('./public-dev/img/**').pipe(gulp.dest('./public/img'));
 });
 
 gulp.task('concat-minify-js', function()
 {
-	gulp.src('./public-dev/index.html')
-		.pipe(getHtmlSrc({presets: 'script'}))
+	return getFiles({file: './public-dev/index.html', selector: 'script', attribute: 'src'})
 		.pipe(concat('scripts.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
@@ -23,24 +28,23 @@ gulp.task('concat-minify-js', function()
 
 gulp.task('concat-minify-css', function()
 {
-	gulp.src('./public-dev/index.html')
-		.pipe(getHtmlSrc({presets: 'css'}))
+	return getFiles({file: './public-dev/index.html', selector: 'link[rel="stylesheet"]', attribute: 'href'})
 		.pipe(concat('styles.min.css'))
 		.pipe(mincss())
-		.pipe(gulp.dest('./public/js'));
+		.pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('use-min-and-minify-html', function()
 {
-	gulp.src('./public-dev/index.html')
-		.pipe(usemin())
-		//.pipe(minhtml({spare: true, empty: true})) throws exception. I don't know why
+	return gulp.src('./public-dev/index.html')
+		.pipe(replaceHtml({js: 'js/scripts.min.js', css: 'css/styles.min.css'}))
+		.pipe(minhtml({spare: true, empty: true}))
 		.pipe(gulp.dest('./public'));
 });
 
-gulp.task('clean-public', function(cb)
+gulp.task('clean-public', function()
 {
-	del.sync(['./public/**'], cb);
+	return gulp.src('./public', {read: false}).pipe(clean());
 });
 
-gulp.task('default', ['clean-public', 'copy-images', 'concat-minify-js', 'concat-minify-css', 'use-min-and-minify-html']);
+gulp.task('default', ['everything']);
