@@ -64,7 +64,7 @@ function cardsFactory(socketio, $rootScope, ngProgress)
 		}
 	};
 
-	factory.unsave = function(name)
+	factory.unSave = function(name)
 	{
 		console.log('unsaving '+name);
 		var card = _(savedCards).findWhere({name: name});

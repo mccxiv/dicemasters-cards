@@ -6,6 +6,7 @@
 		<link rel="icon" type="image/png" href="img/dicemasters-storm.png">
 
 		<!-- build:css -->
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/nanoscroller/bin/css/nanoscroller.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/bootswatch/paper/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/ngprogress/ngProgress.css">
@@ -24,6 +25,11 @@
 				<div class="card card-animation" ng-repeat="card in getCards()">
 					<div class="card-name" ng-if="!card.image">{{card.name}}</div>
 					<img class="card-image" ng-if="card.image" ng-src="{{card.image}}">
+					<div class="hover-overlay">
+						<md-button class="md-fab md-warn remove-button" ng-click="unSave(card.name)" >
+							<md-icon icon="img/ic_remove_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+						</md-button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -40,16 +46,20 @@
 					   adr-select-on-click>
 			</div>
 			<div class="cards" scrollable="{tabIndex: -1}">
-				<div class="card card-animation" ng-repeat="card in getCards()" ng-click="save(card.name)" ng-class="{'full': card.image}">
+				<div class="card card-animation" ng-repeat="card in getCards()" ng-class="{'full': card.image}">
 					<div class="card-name" ng-if="!card.image">
 						<div class="title">{{card.title}}</div>
 						<div class="subtitle">{{card.subtitle}}</div>
 					</div>
 					<div class="card-apology" ng-if="!card.image && card.rarity">
 						<div class="apology-text">No image available.</div>
-						<div><a href="{{card.url}}" target="_blank">More info</a></div>
 					</div>
 					<img class="card-image" ng-if="card.image" ng-src="{{card.image}}">
+					<div class="hover-overlay">
+						<md-button class="md-fab md-primary add-button" ng-click="save(card.name)" >
+							<md-icon icon="img/ic_add_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+						</md-button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -60,12 +70,17 @@
 
 		<!-- build:js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
 		<script src="bower_components/socket.io-client/socket.io.js"></script>
+		<script src="bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
-		<script src="bower_components/underscore/underscore.js"></script>
+		<script src="bower_components/angular-aria/angular-aria.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/hammerjs/hammer.js"></script>
+		<script src="bower_components/angular-material/angular-material.js"></script>
 		<script src="bower_components/ngprogress/build/ngProgress.js"></script>
-		<script src="bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
 		<script src="bower_components/angular-nanoscroller/scrollable.js"></script>
 
 		<script src="js/controllers/main.js"></script>

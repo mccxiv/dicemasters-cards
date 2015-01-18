@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('diceMasters', ['ngAnimate', 'ngProgress', 'sun.scrollable']);
+var app = angular.module('diceMasters', ['ngAnimate', 'ngProgress', 'ngMaterial', 'sun.scrollable']);
 
 
 app.factory('socketio', socketioFactory);

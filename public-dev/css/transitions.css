@@ -14,6 +14,11 @@
 	transition: height 300ms ease-out;
 }
 
+.searching .searchArea .add-button
+{
+	transition: opacity 150ms ease-in-out;
+}
+
 .deskArea .card, .deskArea .card::after
 {
 	transition: all 300ms ease-in-out 400ms;
@@ -37,12 +42,17 @@
 
 .card
 {
-	transition: transform ease-out 200ms;
+	transition: transform ease-out 75ms;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
 .splash
 {
-	transition: margin-left 800ms ease-out 200ms;
+	transition: margin-left 1000ms ease-in-out 400ms;
+}
+
+.deskArea .ng-leave
+{
+	transition-duration: 0s;
 }

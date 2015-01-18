@@ -25,7 +25,6 @@ body
 .deskArea .cards
 {
 	height: 100%;
-	padding-top: 10px;
 }
 
 .deskArea .card
@@ -59,10 +58,9 @@ body
 
 .card
 {
-	display: inline-block;
+	float: left;
 	height: 350px;
 	width: 250px;
-	overflow: hidden;
 	background: url(../img/dice-masters-card-back.png);
 	background-size: 100%;
 	text-align: center;
@@ -86,11 +84,6 @@ body
 	top: 0;
 	left: 0;
 	pointer-events: none;
-}
-
-.card:hover
-{
-	transform: scale(1.05, 1.05);
 }
 
 .card-name
@@ -123,4 +116,39 @@ body
 {
 	width: 100%;
 	height: 100%;
+	border-radius: 10px;
 }
+
+.hover-overlay
+{
+	background-color: rgba(0, 0, 0, .25);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.deskArea .hover-overlay
+{
+	border-radius: 3px;
+}
+
+.card:hover .hover-overlay
+{
+	opacity: 100;
+}
+
+.searching .deskArea .remove-button
+{
+	display: none;
+}
+
+.remove-button
+{
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+

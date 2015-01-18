@@ -10,6 +10,7 @@
     "underscore": "~1.7.0",
     "bootswatch": "~3.3.1+2",
     "ngprogress": "~1.0.7",
-    "angular-nanoscroller": "~0.2.1"
+    "angular-nanoscroller": "~0.2.1",
+    "angular-material": "master"
   }
 }

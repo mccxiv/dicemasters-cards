@@ -15,7 +15,7 @@
 {
 	overflow: auto;
 	height: calc(100% - 100px);
-	display: none;
+	opacity: 0;
 	margin-top: 100px;
 }
 
@@ -67,10 +67,21 @@
 	height: 45px;
 }
 
+.searchArea .card:hover .card-image
+{
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
+}
+
+.searchArea .card:hover
+{
+	transform: scale(1.05, 1.05);
+}
+
 /* WHILE SEARCHING */
 .searching .searchArea .cards
 {
-	display: block;
+	opacity: 100;
 }
 
 .searching .searchArea
@@ -81,6 +92,18 @@
 .searching .searchArea .card
 {
 	opacity: 100;
+}
+
+.searching .add-button
+{
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.searchArea .hover-overlay
+{
+	border-radius: 10px;
 }
 
 .searchArea .card
