@@ -1,7 +1,6 @@
 # Marvel Dice Masters™ cards.
 
-
-## [dicemasters.mccxiv.me](http://dicemasters.mccxiv.me)
+## <a href="http://dicemasters.mccxiv.me" target="_blank">dicemasters.mccxiv.me</a>
 
 #### What is it?
 A convenient way to display multiple cards on screen.  
@@ -25,4 +24,4 @@ Especially true for beginners that don't have them memorized.
 - angular front end with some limited use of [angular material design](https://github.com/angular/material) elements
 - socket.io for data
 
-##### Demo & live site: [dicemasters.mccxiv.me](http://dicemasters.mccxiv.me)
+##### Demo & live site: <a href="http://dicemasters.mccxiv.me" target="_blank">dicemasters.mccxiv.me</a>
