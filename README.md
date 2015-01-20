@@ -1,4 +1,11 @@
-## A web page to view and compare Marvel Dice Masters™ cards.
+# Marvel Dice Masters™ cards.
+
+
+## [dicemasters.mccxiv.me](http://dicemasters.mccxiv.me)
+
+#### What is it?
+A convenient way to display multiple cards on screen.  
+Not meant for deck building, there are better resources for that. 
 
 #### Use cases
 - A friend and I want to play Dice Masters remotely via webcam.
@@ -12,3 +19,10 @@ Especially true for beginners that don't have them memorized.
 - [x] Search for cards
 - [x] Save individual cards so that a new search won't clear them
 - [ ] Ability to share a set of saved cards via url
+
+##### Project info
+- node.js server, cards fetched using [this scraper](https://github.com/mccxiv/dm-lookup)
+- angular front end with some limited use of [angular material design](https://github.com/angular/material) elements
+- socket.io for data
+
+##### Demo & live site: [dicemasters.mccxiv.me](http://dicemasters.mccxiv.me)
