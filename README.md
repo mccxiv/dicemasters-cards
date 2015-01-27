@@ -1,6 +1,6 @@
 # Marvel Dice Masters™ cards.
 
-## <a href="http://dicemasters.mccxiv.me" target="_blank">dicemasters.mccxiv.me</a>
+### <a href="http://dicemasters.mccxiv.me" target="_blank">dicemasters.mccxiv.me</a>
 
 #### What is it?
 A convenient way to display multiple cards on screen.  
